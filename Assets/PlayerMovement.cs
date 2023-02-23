@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
     public float movementVelocity = 5;
-    public float xComp = 0;
+    public float xComp = -1;
     public float yComp = 0;
     // Update is called once per frame
     void Update()
