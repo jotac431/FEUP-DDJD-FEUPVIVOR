@@ -11,6 +11,7 @@ public class BulletBehaviour : MonoBehaviour
     float bulletMaxRange = 100;
 
     void Start(){
+        //Define the maximum range
         if (weaponType == 0){ //pistol
             bulletMaxRange = 4;
         }else if (weaponType == 1){ //SMG
@@ -19,20 +20,22 @@ public class BulletBehaviour : MonoBehaviour
             bulletMaxRange = 2.5f;
         }else if (weaponType == 1){ //Sniper
             bulletMaxRange = 12;
-        }else if (weaponType == 1){ //Machine Gun
+        }else if (weaponType == 1){ //MiniGun
             bulletMaxRange = 7;
         }
-        Debug.Log("calculated max range");
     }
 
-    // Start is called before the first frame update
     void OnCollisionEnter2D(Collision2D collision){
-        Destroy(gameObject);
+        if (!collision.gameObject.CompareTag("bullet") && !collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Bullet collided with " + collision.gameObject.tag);
+            Destroy(gameObject);
+        }
     }
 
     void Update(){
+        // Destroy bullet if it has gone too far
         if (Vector3.Distance(startingPosition,GetComponent<Transform>().position) > bulletMaxRange){
-            Debug.Log("got to limit");
             Destroy(gameObject);
             
         }
