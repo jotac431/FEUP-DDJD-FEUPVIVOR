@@ -14,10 +14,13 @@ public class GameController : MonoBehaviour
     float weaponMenuAnimationStartTime = -1;
     public float weaponMenuAnimationDuration = 1; //Duration in seconds
     RectTransform rt;
+    GameObject playingInterface;
     void Start()
     {
         rt = GameObject.Find("pc-panel").GetComponent<RectTransform>();
         rt.position = new Vector3(1000, -150, 1100);
+        playingInterface = GameObject.Find("playing-interface");
+        playingInterface.SetActive(false);
     }
 
     // Update is called once per frame
@@ -78,7 +81,15 @@ public class GameController : MonoBehaviour
 
     public void startGame()
     {
+
+        Debug.Log(GameObject.Find("playing-interface"));
+
+
         GameObject.Find("starting-menu").SetActive(false);
+
+
+
+        playingInterface.SetActive(true);
         gameState = "playing";
     }
 }
