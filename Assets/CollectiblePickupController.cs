@@ -33,5 +33,28 @@ public class CollectiblePickupController : MonoBehaviour
             GetComponent<PlayerController>().coins += 1;
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("collectible-pen"))
+        {
+            if (!GetComponent<PlayerController>().smgUnlocked)
+            {
+                GetComponent<PlayerController>().smgUnlocked = true;
+            }
+            else if(!GetComponent<PlayerController>().shotgunUnlocked)
+            {
+                GetComponent<PlayerController>().shotgunUnlocked = true;
+            }
+            else if (!GetComponent<PlayerController>().sniperUnlocked)
+            {
+                GetComponent<PlayerController>().sniperUnlocked = true;
+            }
+            else if (!GetComponent<PlayerController>().mgUnlocked)
+            {
+                GetComponent<PlayerController>().mgUnlocked = true;
+            }
+            else
+            {
+                Debug.LogWarning("A pen drive was collected but all weapons are unlocked!");
+            }
+        }
     }
 }
