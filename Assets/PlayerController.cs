@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public HealthBar healthBar;
+
     public float health = 100;
     public float maxHealth = 100;
     public int coins = 0;
@@ -46,6 +48,17 @@ public class PlayerController : MonoBehaviour
                 Debug.LogError("Invalid argumnet given to unlockWeapon (weaponID must be between 1 and 4 and got " + weaponID + ")");
                 return false;
                 
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Enemy")
+        {
+            Debug.Log("Player collided with " + collision.gameObject.name);
+            health -= collision.gameObject.GetComponent<Enemy>().damage;
+            Debug.Log("HP " + health);
+            //Destroy(collision.gameObject);
         }
     }
 }
