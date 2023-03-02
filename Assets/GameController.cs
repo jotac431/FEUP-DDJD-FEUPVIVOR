@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+
+    public string gameState = "starting";
+
     bool weaponMenuOpened = false;
     float weaponMenuAnimationStartTime = -1;
     public float weaponMenuAnimationDuration = 1; //Duration in seconds
@@ -56,5 +62,23 @@ public class GameController : MonoBehaviour
                 weaponMenuOpened = !weaponMenuOpened;
             }
         }
+
+        //Update coin text
+        if (gameState == "playing")
+        {
+            GameObject.Find("Coins-text").GetComponent<TextMeshProUGUI>().text = "Coins: " + GameObject.Find("Player").GetComponent<PlayerController>().coins;
+        }
+
+    }
+
+    public void exitGame()
+    {
+        Application.Quit();
+    }
+
+    public void startGame()
+    {
+        GameObject.Find("starting-menu").SetActive(false);
+        //gameState = "playing";
     }
 }
