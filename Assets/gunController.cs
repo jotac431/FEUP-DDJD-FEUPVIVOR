@@ -9,7 +9,7 @@ public class gunController : MonoBehaviour
     public bool fireRateBoost = false; //If there is an active fire rate boost
     public Transform bulletSpawnPoint; //Where to spawn the bullets
     public GameObject bulletPrefab; //The bullet prefab to spawn
-    public float bulletSpeed = 10; //The speed of the bullets
+    public float bulletSpeed = 20; //The speed of the bullets
     public float fireRate = 3; //The fire rate in bullets per second
     float lastFireTime = -1; //Timestamp of the last time a bullet was fired
     void Update()
@@ -45,9 +45,11 @@ public class gunController : MonoBehaviour
 
         if (Input.GetKey("space") && (Time.time - lastFireTime) >= 1/fireRate){
             lastFireTime = Time.time; //Register the last time a bullet was fired
-            var bullet = Instantiate(bulletPrefab,bulletSpawnPoint.position,bulletSpawnPoint.rotation); //Create the bullet
             float xComp = GetComponent<PlayerMovement>().xComp;
             float yComp = GetComponent<PlayerMovement>().yComp; //Get the direction the player is facing
+            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation); //Create the bullet
+            Debug.Log("Rotating with angle " + Mathf.Atan2(xComp, yComp));
+            bullet.transform.Rotate(Vector3.forward,Mathf.Atan2(yComp,xComp));
             bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(xComp*bulletSpeed,yComp*bulletSpeed,0); //Set the velocity of the bullet relative to the direction te player is facing
             bullet.GetComponent<BulletBehaviour>().weaponType = weaponType; //Set the weapon type that fired the bullet
             bullet.GetComponent<BulletBehaviour>().startingPosition = bulletSpawnPoint.position; //Set the position from which the bullet was fired
