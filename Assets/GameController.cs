@@ -79,6 +79,6 @@ public class GameController : MonoBehaviour
     public void startGame()
     {
         GameObject.Find("starting-menu").SetActive(false);
-        //gameState = "playing";
+        gameState = "playing";
     }
 }
