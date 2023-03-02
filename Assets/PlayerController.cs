@@ -13,6 +13,20 @@ public class PlayerController : MonoBehaviour
     public bool mgUnlocked = false;
     public bool playerFlipped = false;
 
+    public bool isDead()
+    {
+        return health == 0;
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        if (health < 0)
+            health = 0;
+
+        //healthBar.SetHealth(health);
+    }
+
     public void UnlockWeapon(int weaponID)
     {
         switch (weaponID)
@@ -62,6 +76,17 @@ public class PlayerController : MonoBehaviour
         {
             playerFlipped = false;
             GetComponent<SpriteRenderer>().flipX = false;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Enemy")
+        {
+            Debug.Log("Player collided with " + collision.gameObject.name);
+            TakeDamage(collision.gameObject.GetComponent<Enemy>().damage);
+            Debug.Log("HP " + health);
+            //Destroy(collision.gameObject);
         }
     }
 }
