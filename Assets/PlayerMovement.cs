@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,20 +16,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.Find("GameController").GetComponent<GameController>().gameState != "playing")
+        {
+            return;
+        }
         float lastXComp = xComp;
         float lastYComp = yComp;
         xComp = 0;
         yComp = 0;
-        if (Input.GetKey("d")){
+        if (Input.GetKey(KeyCode.D)){
             xComp += 1;
         }
-        if (Input.GetKey("a")){
+        if (Input.GetKey(KeyCode.A)){
             xComp -= 1;
         }
-        if (Input.GetKey("w")){
+        if (Input.GetKey(KeyCode.W)){
             yComp += 1;
         }
-        if (Input.GetKey("s")){
+        if (Input.GetKey(KeyCode.S)){
             yComp -= 1;
         }
         if (Mathf.Abs(xComp) + Mathf.Abs(yComp) == 2){

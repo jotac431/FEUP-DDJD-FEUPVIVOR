@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool shotgunUnlocked = false;
     public bool sniperUnlocked = false;
     public bool mgUnlocked = false;
+    public bool playerFlipped = false;
 
     public void UnlockWeapon(int weaponID)
     {
@@ -46,6 +47,21 @@ public class PlayerController : MonoBehaviour
                 Debug.LogError("Invalid argumnet given to unlockWeapon (weaponID must be between 1 and 4 and got " + weaponID + ")");
                 return false;
                 
+        }
+    }
+
+    private void Update()
+    {
+        if (GetComponent<PlayerMovement>().xComp > 0 && !playerFlipped)
+        {
+            playerFlipped = true;
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        if(GetComponent<PlayerMovement>().xComp < 0 && playerFlipped)
+        {
+            playerFlipped = false;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 }
