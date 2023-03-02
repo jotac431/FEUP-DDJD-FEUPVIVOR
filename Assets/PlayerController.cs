@@ -6,13 +6,27 @@ public class PlayerController : MonoBehaviour
 {
     public HealthBar healthBar;
 
-    public float health = 100;
-    public float maxHealth = 100;
+    public int health = 100;
+    public int maxHealth = 100;
     public int coins = 0;
     public bool smgUnlocked = false;
     public bool shotgunUnlocked = false;
     public bool sniperUnlocked = false;
     public bool mgUnlocked = false;
+
+    public bool isDead()
+    {
+        return health == 0;
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        if (health < 0)
+            health = 0;
+
+        healthBar.SetHealth(health);
+    }
 
     public void UnlockWeapon(int weaponID)
     {
@@ -56,9 +70,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "Enemy")
         {
             Debug.Log("Player collided with " + collision.gameObject.name);
-            health -= collision.gameObject.GetComponent<Enemy>().damage;
+            TakeDamage(collision.gameObject.GetComponent<Enemy>().damage);
             Debug.Log("HP " + health);
             //Destroy(collision.gameObject);
         }
     }
 }
+

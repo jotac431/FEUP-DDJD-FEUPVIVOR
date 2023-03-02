@@ -8,6 +8,10 @@ public class GameController : MonoBehaviour
     float weaponMenuAnimationStartTime = -1;
     public float weaponMenuAnimationDuration = 1; //Duration in seconds
     RectTransform rt;
+
+    int score = 0;
+    public GameOverScreen GameOverScreen;
+
     void Start()
     {
         rt = GameObject.Find("pc-panel").GetComponent<RectTransform>();
@@ -17,7 +21,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Check Game Over
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isDead())
+        {
+            GameOver();
+        }
         //Animate weapon menu
         float progress = (Time.time - weaponMenuAnimationStartTime) / weaponMenuAnimationDuration;
         if (progress < 1)
@@ -56,5 +64,11 @@ public class GameController : MonoBehaviour
                 weaponMenuOpened = !weaponMenuOpened;
             }
         }
+    }
+
+    //Game Over Screen
+    public void GameOver()
+    {
+        GameOverScreen.Setup(score);
     }
 }
