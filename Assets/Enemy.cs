@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         // Move our position a step closer to the target.
         if (speed < 1.0f)
         {
-            speed += 0.1f;
+            speed += 0.2f;
         }
         var step = speed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, pos, step);
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             Debug.Log("Enemy collided with " + collision.gameObject.tag);
-            speed = -speed;
+            speed = -5.0f;
         }
     }
 
