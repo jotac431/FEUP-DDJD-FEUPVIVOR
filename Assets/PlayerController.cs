@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float health = 100;
-    public float maxHealth = 100;
+    public int health = 100;
+    public int maxHealth = 100;
     public int coins = 0;
     public bool smgUnlocked = false;
     public bool shotgunUnlocked = false;
     public bool sniperUnlocked = false;
     public bool mgUnlocked = false;
     public bool playerFlipped = false;
+
+    public HealthBar healthBar;
 
     public bool isDead()
     {
@@ -24,7 +26,7 @@ public class PlayerController : MonoBehaviour
         if (health < 0)
             health = 0;
 
-        //healthBar.SetHealth(health);
+        healthBar.SetHealth(health);
     }
 
     public void UnlockWeapon(int weaponID)
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Enemy")
+        if (collision.gameObject.name == "Enemy RFC" || collision.gameObject.name == "Enemy Test")
         {
             Debug.Log("Player collided with " + collision.gameObject.name);
             TakeDamage(collision.gameObject.GetComponent<Enemy>().damage);
