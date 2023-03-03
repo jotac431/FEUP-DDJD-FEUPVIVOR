@@ -55,6 +55,8 @@ public class CollectiblePickupController : MonoBehaviour
             {
                 Debug.LogWarning("A pen drive was collected but all weapons are unlocked!");
             }
+
+            Destroy(collision.gameObject);
         }
     }
 }

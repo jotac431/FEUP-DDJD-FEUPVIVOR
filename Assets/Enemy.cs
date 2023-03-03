@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("bullet"))
         {
             Debug.Log("Enemy collided with " + collision.gameObject.tag);
-            TakeDamage(50);
+            TakeDamage(20);
         }
 
         if (collision.gameObject.name == "Player")
@@ -67,6 +67,18 @@ public class Enemy : MonoBehaviour
         health -= amount;
         if (health < 0)
             health = 0;
+
+        var color = gameObject.GetComponent<SpriteRenderer>().color;
+        if (health >= 80)
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 1f);
+        else if (health >= 60)
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.8f);
+        else if (health >= 40)
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
+        else if (health >= 20)
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.4f);
+        else
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.2f);
 
         //healthBar.SetHealth(health);
     }
