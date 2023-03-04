@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,14 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public int maxHealth = 100;
     public int cost;
+    public float dropRate = 0.2f;
+
+    public GameObject attackCollectible;
+    public GameObject firerateCollectible;
+    public GameObject healthCollectible;
+    public GameObject velocityCollectible;
+    public GameObject coinCollectible;
+    public GameObject penCollectible;
 
 
     // Start is called before the first frame update
@@ -72,7 +81,8 @@ public class Enemy : MonoBehaviour
         health -= amount;
         if (health < 0)
             health = 0;
-
+        if (health == 0)
+            DropItem(null);
 
         //Set less transparency when enemies lose HP
         var color = gameObject.GetComponent<SpriteRenderer>().color;
@@ -98,4 +108,56 @@ public class Enemy : MonoBehaviour
         }
 
     }
+
+    void DropItem(string type)
+    {
+        //Drops items depending on type (attack, firerate, velocity, health, pen, coin or null)
+        //If type is null, a random item is dropped with drop rate equal to the one defined by dropRate and a coin
+
+
+        Transform myT = GetComponent<Transform>();
+        if (type == null) //drop random item and coin
+        {
+            Instantiate(coinCollectible, myT.position + new Vector3(UnityEngine.Random.value * 2 - 1, UnityEngine.Random.value * 2 - 1), myT.rotation);
+            float a = UnityEngine.Random.value;
+            if (a < dropRate/4)
+            {
+                type = "attack";
+            }else if(a < dropRate/2)
+            {
+                type = "firerate";
+            }else if(a < dropRate*3/4)
+            {
+                type = "health";
+            }
+            else
+            {
+                type = "velocity";
+            }
+        }
+        Debug.Log("Dropping " + type);
+        if(type == "attack")
+        {
+            Instantiate(attackCollectible,myT.position + new Vector3(UnityEngine.Random.value*2-1, UnityEngine.Random.value * 2 - 1), myT.rotation);
+        }else if (type == "firerate")
+        {
+            Instantiate(firerateCollectible, myT.position + new Vector3(UnityEngine.Random.value * 2 - 1, UnityEngine.Random.value * 2 - 1), myT.rotation);
+        }else if (type == "health")
+        {
+            Instantiate(healthCollectible, myT.position + new Vector3(UnityEngine.Random.value * 2 - 1, UnityEngine.Random.value * 2 - 1), myT.rotation);
+        }else if (type == "velocity")
+        {
+            Instantiate(velocityCollectible, myT.position + new Vector3(UnityEngine.Random.value * 2 - 1, UnityEngine.Random.value * 2 - 1), myT.rotation);
+        }
+        else if (type == "coin")
+        {
+            Instantiate(velocityCollectible, myT.position + new Vector3(UnityEngine.Random.value * 2 - 1, UnityEngine.Random.value * 2 - 1), myT.rotation);
+        }
+        else if (type == "pen")
+        {
+            Instantiate(penCollectible, myT.position + new Vector3(UnityEngine.Random.value * 2 - 1, UnityEngine.Random.value * 2 - 1), myT.rotation);
+        }
+    }
+
+
 }

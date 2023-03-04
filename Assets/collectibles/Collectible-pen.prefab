@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectible-pen
       objectReference: {fileID: 0}
+    - target: {fileID: 3008364536920060769, guid: 4a1924cfc2216e045b64e14125d41544, type: 3}
+      propertyPath: m_TagString
+      value: collectible-pen
+      objectReference: {fileID: 0}
     - target: {fileID: 3008364536920060770, guid: 4a1924cfc2216e045b64e14125d41544, type: 3}
       propertyPath: m_RootOrder
       value: 0

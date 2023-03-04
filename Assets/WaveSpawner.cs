@@ -63,9 +63,9 @@ public class WaveSpawner : MonoBehaviour
             currWave++;
             GenerateWave();
         }
-        Debug.Log("spawn Timer: " + spawnTimer);
-        Debug.Log("wave Timer: " + waveTimer);
-        Debug.Log("spawn Counter: " + spawnedEnemies.Count);
+        //Debug.Log("spawn Timer: " + spawnTimer);
+        //Debug.Log("wave Timer: " + waveTimer);
+        //Debug.Log("spawn Counter: " + spawnedEnemies.Count);
     }
 
     public void GenerateWave()

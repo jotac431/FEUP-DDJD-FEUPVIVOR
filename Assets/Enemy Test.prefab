@@ -27,6 +27,30 @@ PrefabInstance:
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 8855829073299737967}
+    - target: {fileID: 6152438864238090616, guid: e050819bd31fa8a4e951d9982a8908af, type: 3}
+      propertyPath: penCollectible
+      value: 
+      objectReference: {fileID: 775569235897315373, guid: efa6a25b803a2764a86330a2890309bb, type: 3}
+    - target: {fileID: 6152438864238090616, guid: e050819bd31fa8a4e951d9982a8908af, type: 3}
+      propertyPath: coinCollectible
+      value: 
+      objectReference: {fileID: 7095413005643876851, guid: 2f5ee4bc7802c1d408672687b146b021, type: 3}
+    - target: {fileID: 6152438864238090616, guid: e050819bd31fa8a4e951d9982a8908af, type: 3}
+      propertyPath: attackCollectible
+      value: 
+      objectReference: {fileID: 2705546597143960190, guid: 3dc8550a703bc364d80ea6641428b8dd, type: 3}
+    - target: {fileID: 6152438864238090616, guid: e050819bd31fa8a4e951d9982a8908af, type: 3}
+      propertyPath: healthCollectible
+      value: 
+      objectReference: {fileID: 4962593076428059694, guid: c23e17bdfd2bf924aa28f14429afd639, type: 3}
+    - target: {fileID: 6152438864238090616, guid: e050819bd31fa8a4e951d9982a8908af, type: 3}
+      propertyPath: firerateCollectible
+      value: 
+      objectReference: {fileID: 2810060419324116504, guid: 9d2e08d1f59ea494a9bdebbdd05726be, type: 3}
+    - target: {fileID: 6152438864238090616, guid: e050819bd31fa8a4e951d9982a8908af, type: 3}
+      propertyPath: velocityCollectible
+      value: 
+      objectReference: {fileID: 5593774670942746056, guid: cf9707baab974774f89d79d54cb2fa74, type: 3}
     - target: {fileID: 6152438864238090618, guid: e050819bd31fa8a4e951d9982a8908af, type: 3}
       propertyPath: m_Sprite
       value: 
