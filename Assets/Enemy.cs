@@ -47,6 +47,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("bullet"))
         {
             Debug.Log("Enemy collided with " + collision.gameObject.tag);
+            speed = -5.0f;
             TakeDamage(20);
         }
 

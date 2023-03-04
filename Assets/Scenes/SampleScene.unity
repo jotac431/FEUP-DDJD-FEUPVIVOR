@@ -13472,7 +13472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: starting
   weaponMenuAnimationDuration: 0.3
-  GameOverScreen: {fileID: 0}
+  GameOverScreen: {fileID: 1967849677}
 --- !u!4 &985926910
 Transform:
   m_ObjectHideFlags: 0
@@ -13694,6 +13694,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e1ab8bea3041dbd43818c8a0bc16ec53, type: 3}
+    - target: {fileID: 4523034157027337687, guid: 4034da81fd5c307488f1b4d11055ba25, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523034157027337687, guid: 4034da81fd5c307488f1b4d11055ba25, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523034157027337687, guid: 4034da81fd5c307488f1b4d11055ba25, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523034157027337687, guid: 4034da81fd5c307488f1b4d11055ba25, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4034da81fd5c307488f1b4d11055ba25, type: 3}
 --- !u!1 &1064171548
@@ -14989,7 +15005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152828c57c30ef64ab1ab9c4ea83ba32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1612201130}
   playerHealth: {fileID: 0}
 --- !u!114 &1612201130
 MonoBehaviour:
@@ -19640,7 +19656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1967849676
 RectTransform:
   m_ObjectHideFlags: 0
