@@ -12,6 +12,8 @@ TagManager:
   - collectible-speed
   - collectible-attack
   - collectible-pen
+  - enemy
+  - WaveSpawner
   layers:
   - Default
   - TransparentFX

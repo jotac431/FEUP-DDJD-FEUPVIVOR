@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Enemy RFC" || collision.gameObject.name == "Enemy Test")
+        if (collision.gameObject.CompareTag("enemy"))
         {
             Debug.Log("Player collided with " + collision.gameObject.name);
             TakeDamage(collision.gameObject.GetComponent<Enemy>().damage);

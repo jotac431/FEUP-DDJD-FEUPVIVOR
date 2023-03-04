@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8905605498418888056}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,10 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a351341f715f92540a706a0571855769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
   speed: 1
   damage: 10
   health: 100
   maxHealth: 100
+  cost: 0
 --- !u!50 &623394573250354477
 Rigidbody2D:
   serializedVersion: 4

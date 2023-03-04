@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+    public GameObject enemyPrefab;
     // Adjust the speed for the application.
     public float speed = 1.0f;
     public int damage = 10;
     public int health = 100;
     public int maxHealth = 100;
+    public int cost;
 
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //Enemies bounce back when hit by bullet
         if (collision.gameObject.CompareTag("bullet"))
         {
             Debug.Log("Enemy collided with " + collision.gameObject.tag);
@@ -51,6 +53,7 @@ public class Enemy : MonoBehaviour
             TakeDamage(20);
         }
 
+        //Enemies bounce back when they collide with player
         if (collision.gameObject.name == "Player")
         {
             Debug.Log("Enemy collided with " + collision.gameObject.tag);
@@ -65,10 +68,13 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        //Reduces health
         health -= amount;
         if (health < 0)
             health = 0;
 
+
+        //Set less transparency when enemies lose HP
         var color = gameObject.GetComponent<SpriteRenderer>().color;
         if (health >= 80)
             gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 1f);
@@ -82,5 +88,14 @@ public class Enemy : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.2f);
 
         //healthBar.SetHealth(health);
+    }
+
+    void OnDestroy()
+    {
+        if (GameObject.FindGameObjectWithTag("WaveSpawner") != null)
+        {
+            GameObject.FindGameObjectWithTag("WaveSpawner").GetComponent<WaveSpawner>().spawnedEnemies.Remove(gameObject);
+        }
+
     }
 }
