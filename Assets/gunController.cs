@@ -52,6 +52,10 @@ public class gunController : MonoBehaviour
             {
                 bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position + new Vector3(0.3f, -0.55f, 0), bulletSpawnPoint.rotation); //Create the bullet
             }
+            else if (yComp > 0)
+            {
+                bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position + new Vector3(0.3f, +0.55f, 0), bulletSpawnPoint.rotation);
+            }
             else if (xComp == 1)
             {
                 bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position + new Vector3(0.6f, 0, 0), bulletSpawnPoint.rotation); //Create the bullet
@@ -62,7 +66,7 @@ public class gunController : MonoBehaviour
                 bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation); //Create the bullet
             }
             Debug.Log("Rotating with angle " + Mathf.Atan2(xComp, yComp));
-            bullet.transform.Rotate(Vector3.forward,Mathf.Atan2(yComp,xComp));
+            bullet.transform.Rotate(Vector3.forward,Mathf.Atan2(yComp,xComp)*180/Mathf.PI);
             bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(xComp*bulletSpeed,yComp*bulletSpeed,0); //Set the velocity of the bullet relative to the direction te player is facing
             bullet.GetComponent<BulletBehaviour>().weaponType = weaponType; //Set the weapon type that fired the bullet
             bullet.GetComponent<BulletBehaviour>().startingPosition = bulletSpawnPoint.position; //Set the position from which the bullet was fired
