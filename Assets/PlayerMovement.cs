@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("GameController").GetComponent<GameController>().gameState != "playing")
+        string gs = GameObject.Find("GameController").GetComponent<GameController>().gameState;
+        if (gs != "playing")
         {
             return;
         }
@@ -47,4 +48,6 @@ public class PlayerMovement : MonoBehaviour
             yComp = lastYComp;
         }
     }
+
+
 }

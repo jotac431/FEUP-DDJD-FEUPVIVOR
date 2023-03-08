@@ -104,4 +104,9 @@ public class GameController : MonoBehaviour
     {
         GameOverScreen.Setup(score);
     }
+
+    public void RestartGame()
+    {
+        
+    }
 }

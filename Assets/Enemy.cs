@@ -46,7 +46,10 @@ public class Enemy : MonoBehaviour
             speed += 0.2f;
         }
         var step = speed * Time.deltaTime; // calculate distance to move
-        transform.position = Vector3.MoveTowards(transform.position, pos, step);
+        if (GameObject.Find("GameController").GetComponent<GameController>().gameState == "playing")
+        {
+            transform.position = Vector3.MoveTowards(transform.position, pos, step);
+        }
         //transform.position = transform.position + new Vector3(step, step, 0);
         //GameObject.FindGameObjectWithTag("Player").transform.position;
 

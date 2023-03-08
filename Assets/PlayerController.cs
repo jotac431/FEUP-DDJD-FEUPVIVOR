@@ -24,7 +24,10 @@ public class PlayerController : MonoBehaviour
     {
         health -= amount;
         if (health < 0)
+        {
             health = 0;
+            GameObject.Find("GameController").GetComponent<GameController>().gameState = "gameOver";
+        }
 
         healthBar.SetHealth(health);
     }
