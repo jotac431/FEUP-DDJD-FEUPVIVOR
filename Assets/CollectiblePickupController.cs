@@ -36,7 +36,7 @@ public class CollectiblePickupController : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        Debug.Log("Collision detected with " + collision.gameObject.tag);
+        //Debug.Log("Collision detected with " + collision.gameObject.tag);
         if (collision.gameObject.CompareTag("collectible-speed"))
         {
             if (velocityBoostStartTime != -1)

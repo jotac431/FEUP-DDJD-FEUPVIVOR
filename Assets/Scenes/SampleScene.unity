@@ -398,6 +398,7 @@ MonoBehaviour:
   - {fileID: 1478166576}
   spawnIndex: 0
   waveDuration: 10
+  pensToSpawn: 0
   spawnedEnemies: []
 --- !u!4 &71318044
 Transform:
@@ -13657,6 +13658,12 @@ MonoBehaviour:
   gameState: starting
   weaponMenuAnimationDuration: 0.3
   GameOverScreen: {fileID: 1967849677}
+  weaponsButtonList:
+  - {fileID: 1282866401}
+  - {fileID: 905397095}
+  - {fileID: 1064171548}
+  - {fileID: 1255034131}
+  - {fileID: 338867072}
 --- !u!4 &985926910
 Transform:
   m_ObjectHideFlags: 0

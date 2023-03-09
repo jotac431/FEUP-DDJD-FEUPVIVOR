@@ -26,12 +26,14 @@ public class WeaponSelectorController : MonoBehaviour
 
     public void setMoodleActive()
     {
+        Debug.Log("Changing to pistol");
         screenImage.GetComponent<Image>().sprite = moodlePage;
         playerObject.GetComponent<gunController>().weaponType = 0;
     }
 
     public void setGoogleActive()
     {
+        Debug.Log("Changing to smg");
         if (playerObject.GetComponent<PlayerController>().smgUnlocked)
         {
             screenImage.GetComponent<Image>().sprite = googlePage;
@@ -45,6 +47,7 @@ public class WeaponSelectorController : MonoBehaviour
 
     public void setYoutubeActive()
     {
+        Debug.Log("Changing to shotgun");
         if (playerObject.GetComponent<PlayerController>().shotgunUnlocked)
         {
             screenImage.GetComponent<Image>().sprite = youtubePage;
@@ -58,6 +61,7 @@ public class WeaponSelectorController : MonoBehaviour
 
     public void setStackOverflowActive()
     {
+        Debug.Log("Changing to sniper");
         if (playerObject.GetComponent<PlayerController>().sniperUnlocked)
         {
             screenImage.GetComponent<Image>().sprite = stackOverflowPage;
@@ -71,6 +75,7 @@ public class WeaponSelectorController : MonoBehaviour
 
     public void setChatgptActive()
     {
+        Debug.Log("Changing to mg");
         if (playerObject.GetComponent<PlayerController>().mgUnlocked)
         {
             screenImage.GetComponent<Image>().sprite = chatgptPage;

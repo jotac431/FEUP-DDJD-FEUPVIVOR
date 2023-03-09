@@ -43,7 +43,7 @@ public class gunController : MonoBehaviour
         }
 
 
-        if (Input.GetKey("space") && (Time.time - lastFireTime) >= 1/fireRate && GameObject.Find("GameController").GetComponent<GameController>().gameState == "playing"){
+        if ((Input.GetKey("space") || Input.GetKey(KeyCode.I)) && (Time.time - lastFireTime) >= 1/fireRate && GameObject.Find("GameController").GetComponent<GameController>().gameState == "playing"){
             lastFireTime = Time.time; //Register the last time a bullet was fired
             float xComp = GetComponent<PlayerMovement>().xComp;
             float yComp = GetComponent<PlayerMovement>().yComp; //Get the direction the player is facing

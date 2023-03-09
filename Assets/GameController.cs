@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
 
     int score = 0;
     public GameOverScreen GameOverScreen;
-
+    public List<GameObject> weaponsButtonList;
     void Start()
     {
         rt = GameObject.Find("pc-panel").GetComponent<RectTransform>();
@@ -66,10 +66,18 @@ public class GameController : MonoBehaviour
             if (weaponMenuOpened)
             {
                 weaponMenuOpened = !weaponMenuOpened;
+                for(int i = 0; i < weaponsButtonList.Count; i++)
+                {
+                    weaponsButtonList[i].GetComponent<Button>().interactable = false;
+                }
             }
             else
             {
                 weaponMenuOpened = !weaponMenuOpened;
+                for (int i = 0; i < weaponsButtonList.Count; i++)
+                {
+                    weaponsButtonList[i].GetComponent<Button>().interactable = true;
+                }
             }
         }
 
@@ -89,7 +97,7 @@ public class GameController : MonoBehaviour
     public void startGame()
     {
 
-        Debug.Log(GameObject.Find("playing-interface"));
+        //Debug.Log(GameObject.Find("playing-interface"));
 
 
         GameObject.Find("starting-menu").SetActive(false);

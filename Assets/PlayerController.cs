@@ -99,9 +99,9 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
-            Debug.Log("Player collided with " + collision.gameObject.name);
+            //Debug.Log("Player collided with " + collision.gameObject.name);
             TakeDamage(collision.gameObject.GetComponent<Enemy>().damage);
-            Debug.Log("HP " + health);
+            //Debug.Log("HP " + health);
             //Destroy(collision.gameObject);
         }
     }

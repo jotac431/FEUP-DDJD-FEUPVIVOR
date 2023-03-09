@@ -60,9 +60,34 @@ public class Enemy : MonoBehaviour
         //Enemies bounce back when hit by bullet
         if (collision.gameObject.CompareTag("bullet"))
         {
-            //Debug.Log("Enemy collided with " + collision.gameObject.tag);
             speed = -5.0f;
-            TakeDamage(20);
+            int bulletDamage = 0;
+            float weaponType = collision.gameObject.GetComponent<BulletBehaviour>().weaponType;
+            if (weaponType == 0)
+            {
+                bulletDamage = 20;
+            }else if (weaponType == 1)
+            {
+                bulletDamage = 15;
+            }
+            else if(weaponType == 2)
+            {
+                bulletDamage = 65;
+            }
+            else if(weaponType == 3)
+            {
+                bulletDamage = 100;
+            }
+            else if(weaponType == 4)
+            {
+                bulletDamage = 20;
+            }
+            else
+            {
+                Debug.LogWarning("Invalid weapon on enemy collision with bullet");
+            }
+            //Debug.Log("Taking " + bulletDamage + " damage from " + weaponType);
+            TakeDamage(bulletDamage);
         }
 
         //Enemies bounce back when they collide with player
