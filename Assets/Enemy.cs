@@ -146,7 +146,6 @@ public class Enemy : MonoBehaviour
                 type = "velocity";
             }
         }
-        Debug.Log("Dropping " + type);
         if(type == "attack")
         {
             Instantiate(attackCollectible,myT.position + new Vector3(UnityEngine.Random.value*2-1, UnityEngine.Random.value * 2 - 1), myT.rotation);
