@@ -53,7 +53,7 @@ public class CollectiblePickupController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("collectible-health"))
         {
-            GetComponent<PlayerController>().health = GetComponent<PlayerController>().maxHealth;
+            GetComponent<PlayerController>().Heal(100);
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("collectible-firerate"))

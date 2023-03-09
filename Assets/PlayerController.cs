@@ -32,6 +32,17 @@ public class PlayerController : MonoBehaviour
         healthBar.SetHealth(health);
     }
 
+    public void Heal(int amount)
+    {
+        health += amount;
+        if (health > 100)
+        {
+            health = 100;
+        }
+
+        healthBar.SetHealth(health);
+    }
+
     public void UnlockWeapon(int weaponID)
     {
         switch (weaponID)
