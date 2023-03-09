@@ -17,6 +17,7 @@ public class WaveSpawner : MonoBehaviour
     private float waveTimer;
     private float spawnInterval;
     private float spawnTimer;
+    public int pensToSpawn = 0;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
     // Start is called before the first frame update

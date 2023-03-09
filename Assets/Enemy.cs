@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
         //Enemies bounce back when hit by bullet
         if (collision.gameObject.CompareTag("bullet"))
         {
-            Debug.Log("Enemy collided with " + collision.gameObject.tag);
+            //Debug.Log("Enemy collided with " + collision.gameObject.tag);
             speed = -5.0f;
             TakeDamage(20);
         }
@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
         //Enemies bounce back when they collide with player
         if (collision.gameObject.name == "Player")
         {
-            Debug.Log("Enemy collided with " + collision.gameObject.tag);
+            //Debug.Log("Enemy collided with " + collision.gameObject.tag);
             speed = -5.0f;
         }
     }
@@ -85,7 +85,14 @@ public class Enemy : MonoBehaviour
         if (health < 0)
             health = 0;
         if (health == 0)
-            DropItem(null);
+        {
+            if (GameObject.Find("WaveSpawner").GetComponent<WaveSpawner>().spawnedEnemies.Count == 1)
+            {
+                DropItem("pen");
+            }else{
+                DropItem(null);
+            }
+        }
 
         //Set less transparency when enemies lose HP
         var color = gameObject.GetComponent<SpriteRenderer>().color;
