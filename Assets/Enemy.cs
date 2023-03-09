@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public GameObject enemyPrefab;
     // Adjust the speed for the application.
+    public float baseSpeed = 1.0f;
     public float speed = 1.0f;
     public int damage = 10;
     public int health = 100;
@@ -30,7 +31,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isDead())
         {
@@ -41,7 +42,7 @@ public class Enemy : MonoBehaviour
         var pos = GameObject.Find("Player").transform.position;
 
         // Move our position a step closer to the target.
-        if (speed < 1.0f)
+        if (speed < baseSpeed)
         {
             speed += 0.2f;
         }
@@ -60,7 +61,7 @@ public class Enemy : MonoBehaviour
         //Enemies bounce back when hit by bullet
         if (collision.gameObject.CompareTag("bullet"))
         {
-            speed = -5.0f;
+            speed = -3.0f;
             int bulletDamage = 0;
             float weaponType = collision.gameObject.GetComponent<BulletBehaviour>().weaponType;
             if (weaponType == 0)
@@ -94,7 +95,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             //Debug.Log("Enemy collided with " + collision.gameObject.tag);
-            speed = -5.0f;
+            speed = -3.0f;
         }
     }
 
@@ -165,7 +166,7 @@ public class Enemy : MonoBehaviour
             {
                 type = "health";
             }
-            else if (a < dropRate)
+            else if(a < dropRate)
             {
                 type = "velocity";
             }

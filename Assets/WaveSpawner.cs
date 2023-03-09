@@ -91,7 +91,7 @@ public class WaveSpawner : MonoBehaviour
         //  -> if we have no points left, leave the loop
 
         List<GameObject> generatedEnemies = new List<GameObject>();
-        while (waveValue > 0 || generatedEnemies.Count < 10)
+        while (waveValue > 0 || generatedEnemies.Count < 50)
         {
             int randEnemyId = Random.Range(0, enemies.Count);
             int randEnemyCost = enemies[randEnemyId].cost;
