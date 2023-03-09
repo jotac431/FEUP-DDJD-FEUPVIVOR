@@ -79,6 +79,12 @@ public class GameController : MonoBehaviour
             GameObject.Find("Coins-text").GetComponent<TextMeshProUGUI>().text = "Coins: " + GameObject.Find("Player").GetComponent<PlayerController>().coins;
         }
 
+        //Update wave text
+        if (gameState == "playing")
+        {
+            GameObject.Find("Wave-text").GetComponent<TextMeshProUGUI>().text = "Wave: " + GameObject.Find("WaveSpawner").GetComponent<WaveSpawner>().currWave;
+        }
+
     }
 
     public void exitGame()

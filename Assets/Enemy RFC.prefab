@@ -24,6 +24,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6152438864238090616, guid: e050819bd31fa8a4e951d9982a8908af, type: 3}
+      propertyPath: baseSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152438864238090616, guid: e050819bd31fa8a4e951d9982a8908af, type: 3}
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 4523034157027337681}
