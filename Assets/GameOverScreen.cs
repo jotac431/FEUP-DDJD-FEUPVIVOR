@@ -6,11 +6,13 @@ using TMPro;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public TextMeshProUGUI pointsText;
+    public TextMeshProUGUI totalCoinsText;
+    public TextMeshProUGUI waveText;
 
     public void Setup(int score)
     {
         gameObject.SetActive(true);
-        pointsText.text = score.ToString() + " COINS";
+        totalCoinsText.text = score.ToString() + " COINS";
+        waveText.text = score.ToString() + " WAVES";
     }
 }
