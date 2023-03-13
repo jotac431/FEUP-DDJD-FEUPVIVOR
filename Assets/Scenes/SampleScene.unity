@@ -13947,6 +13947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: starting
   weaponMenuAnimationDuration: 0.3
+  score: 0
   GameOverScreen: {fileID: 1967849677}
   weaponsButtonList:
   - {fileID: 1282866401}
@@ -14360,7 +14361,7 @@ GameObject:
   - component: {fileID: 1138734972}
   - component: {fileID: 1138734971}
   m_Layer: 0
-  m_Name: Coins-text
+  m_Name: Coins-text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22289,8 +22290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a5000ed52729648a03eed4cd16a532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalCoinsText: {fileID: 0}
-  waveText: {fileID: 0}
+  totalCoinsText: {fileID: 829280755}
+  waveText: {fileID: 321948373}
 --- !u!114 &1967849678
 MonoBehaviour:
   m_ObjectHideFlags: 0

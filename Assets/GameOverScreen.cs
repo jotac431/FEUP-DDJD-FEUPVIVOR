@@ -12,7 +12,16 @@ public class GameOverScreen : MonoBehaviour
     public void Setup(int score)
     {
         gameObject.SetActive(true);
-        totalCoinsText.text = score.ToString() + " COINS";
-        waveText.text = score.ToString() + " WAVES";
+        totalCoinsText.text = score.ToString() + " Coins";
+
+        int wave = GameObject.Find("WaveSpawner").GetComponent<WaveSpawner>().currWave;
+        if (wave < 1)
+        {
+            waveText.text = wave.ToString() + " Wave";
+        }
+        else
+        {
+            waveText.text = wave.ToString() + " Wave";
+        }
     }
 }

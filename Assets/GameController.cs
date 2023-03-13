@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     RectTransform rt;
     GameObject playingInterface;
 
-    int score = 0;
+    public int score = 0;
     public GameOverScreen GameOverScreen;
     public List<GameObject> weaponsButtonList;
     void Start()
@@ -84,7 +84,7 @@ public class GameController : MonoBehaviour
         //Update coin text
         if (gameState == "playing")
         {
-            GameObject.Find("Coins-text").GetComponent<TextMeshProUGUI>().text = "Coins: " + GameObject.Find("Player").GetComponent<PlayerController>().coins;
+            GameObject.Find("Coins-text1").GetComponent<TextMeshProUGUI>().text = "Coins: " + GameObject.Find("Player").GetComponent<PlayerController>().coins;
         }
 
         //Update wave text

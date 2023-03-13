@@ -88,6 +88,7 @@ public class CollectiblePickupController : MonoBehaviour
         if (collision.gameObject.CompareTag("collectible-coin"))
         {
             GetComponent<PlayerController>().coins += 1;
+            GameObject.Find("GameController").GetComponent<GameController>().score +=1;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("collectible-pen"))
