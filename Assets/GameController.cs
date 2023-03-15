@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -119,8 +120,8 @@ public class GameController : MonoBehaviour
         GameOverScreen.Setup(score);
     }
 
-    public void RestartGame()
+    public void MainMenu()
     {
-        
+        SceneManager.LoadScene("SampleScene");
     }
 }

@@ -99,12 +99,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a351341f715f92540a706a0571855769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 6152438864238090620}
+  baseSpeed: 1
   speed: 1
   damage: 10
   health: 100
   maxHealth: 100
   cost: 0
+  dropRate: 0.2
+  attackCollectible: {fileID: 0}
+  firerateCollectible: {fileID: 0}
+  healthCollectible: {fileID: 0}
+  velocityCollectible: {fileID: 0}
+  coinCollectible: {fileID: 0}
+  penCollectible: {fileID: 0}
 --- !u!50 &623394573250354477
 Rigidbody2D:
   serializedVersion: 4

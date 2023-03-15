@@ -122,13 +122,13 @@ public class Enemy : MonoBehaviour
 
         //Set less transparency when enemies lose HP
         var color = gameObject.GetComponent<SpriteRenderer>().color;
-        if (health >= 80)
+        if (100*health/maxHealth >= 80)
             gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 1f);
-        else if (health >= 60)
+        else if (100 * health / maxHealth >= 60)
             gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.8f);
-        else if (health >= 40)
+        else if (100 * health / maxHealth >= 40)
             gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
-        else if (health >= 20)
+        else if (100 * health / maxHealth >= 20)
             gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.4f);
         else
             gameObject.GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.2f);
