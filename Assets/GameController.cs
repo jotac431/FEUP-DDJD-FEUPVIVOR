@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
         }
 
         //Toggle weapon menu opening
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.Escape) && weaponMenuOpened))
         {
             weaponMenuAnimationStartTime = Time.time;
             if (weaponMenuOpened)
