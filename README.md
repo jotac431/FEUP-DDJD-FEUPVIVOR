@@ -3,6 +3,10 @@ Horde shooter insipered in the desperation the students from FEUP feel while stu
 
 Link to itch.io : https://joaobcosta2001.itch.io/feupvivor
 
+Developers:
+- João Costa - up201907355@fe.up.pt
+- Jorge Costa - up201706518@fe.up.pt
+
 ## Manual de Jogo
 ### Introdução
 O presente manual apresenta as instruções, não só de instalação do Feupvivor, como
@@ -19,7 +23,10 @@ botão Download. Depois de descarregar o ficheiro .zip deverá descomprimi-lo. D
 da pasta descomprimida deverá ter o ficheiro Feupvivor.exe, que deverá executar.
 ### Instruções de jogo
 Quando abrir o jogo ser-lhe-á apresentado o seguinte menu:
-Figura 1 – Menu Inicial
+
+![This is the caption\label{mylabel1}](/doc/1.png)
+<br>*Figura 1 – Menu Inicial.*<br>
+
 Aqui tem duas opções, o botão Start, que dará início ao jogo, e o botão Exit, que fechará
 o jogo.
 Quando clicar em Start o jogo começa e inimigos começarão a aproximar-se do jogador,
@@ -29,7 +36,10 @@ Pode deslocar-se no mapa recorrendo às teclas W, A, S e D e disparar a sua arma
 tecla Espaço.
 Se quiser trocar de arma terá de abrir o menu de troca de arma, premindo a tecla F. Este
 menu é ilustrado a seguir:
-Figura 2 – Menu de Troca de Arma
+
+![This is the caption\label{mylabel1}](/doc/2.png)
+<br>*Figura 2 – Menu de Troca de Arma*<br>
+
 Para trocar de arma basta clicar na aba dos vários separadores e, se a arma já tiver sido
 desbloqueada, aparecerá um website com a silhueta da arma desenhada. Se as armas
 não estiverem ainda desbloqueadas será apresentado uma página de erro de conexão
@@ -46,6 +56,9 @@ enquanto ainda houver armas por desbloquear.
 Os inimigos são de diferentes tipos e cada um têm a sua própria velocidade e dano
 causado no ataque.
 No final do jogo será apresentado o menu seguinte:
+
+![This is the caption\label{mylabel1}](/doc/3.png)
+
 Aqui o jogador poderá reiniciar o jogo no botão Restart ou voltar ao ecrã principal no
 botão Main Menu.
 ### Dúvidas e Bugs
